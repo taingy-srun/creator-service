@@ -11,6 +11,6 @@ import lombok.ToString;
 @ToString
 public class InputCreatorData {
 
-    private String topic;
-    private long fixedRateInMilliseconds;
+    private String topicName;
+    private long topicInterval;
 }

@@ -28,8 +28,8 @@ public class InputCreatorController {
 
     @PostMapping("/create")
     public ResponseEntity<?> createTopic(@RequestBody InputCreatorData csData) throws JsonProcessingException {
-        if (service.find(csData.getTopic()) != null) {
-            return new ResponseEntity<>("The topic: " + csData.getTopic() + " is already exist.", HttpStatus.BAD_REQUEST);
+        if (service.find(csData.getTopicName()) != null) {
+            return new ResponseEntity<>("The topic: " + csData.getTopicName() + " is already exist.", HttpStatus.BAD_REQUEST);
         }
         sender.send(TOPIC_CREATION, csData);
         return new ResponseEntity<>("Topic created successfully!", HttpStatus.OK);

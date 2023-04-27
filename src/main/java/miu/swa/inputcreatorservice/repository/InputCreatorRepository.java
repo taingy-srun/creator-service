@@ -15,7 +15,7 @@ public class InputCreatorRepository {
     }
 
     public void save(InputCreatorData inputData) {
-        this.messages.put(inputData.getTopic(), inputData);
+        this.messages.put(inputData.getTopicName(), inputData);
     }
 
     public void clear(){
