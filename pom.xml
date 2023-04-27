@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>miu.swa</groupId>
-    <artifactId>Creator-Service</artifactId>
+    <artifactId>Input-Creator-Service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Creator-Service</name>
-    <description>Creator-Service</description>
+    <name>Input-Creator-Service</name>
+    <description>Input-Creator-Service</description>
     <properties>
         <java.version>17</java.version>
         <spring-cloud.version>2022.0.2</spring-cloud.version>

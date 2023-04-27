@@ -1,6 +1,6 @@
-package miu.swa.creatorservice.config;
+package miu.swa.inputcreatorservice.config;
 
-import miu.swa.creatorservice.model.CSData;
+import miu.swa.inputcreatorservice.model.InputCreatorData;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,7 +20,7 @@ public class KafkaConfig {
     String KAFKA_BOOSTRAP_SERVER;
 
     @Bean
-    public ConsumerFactory<String, CSData> consumerFactory() {
+    public ConsumerFactory<String, InputCreatorData> consumerFactory() {
         Map<String, Object> props = new HashMap<>();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, KAFKA_BOOSTRAP_SERVER);
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);

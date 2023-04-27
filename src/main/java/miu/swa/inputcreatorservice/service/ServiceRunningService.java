@@ -1,7 +1,7 @@
-package miu.swa.creatorservice.service;
+package miu.swa.inputcreatorservice.service;
 
-import miu.swa.creatorservice.model.ServiceRunningInfo;
-import miu.swa.creatorservice.repository.ServiceRunningRepository;
+import miu.swa.inputcreatorservice.model.ServiceRunningInfo;
+import miu.swa.inputcreatorservice.repository.ServiceRunningRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

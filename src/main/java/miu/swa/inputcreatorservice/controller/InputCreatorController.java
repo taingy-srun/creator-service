@@ -1,11 +1,11 @@
-package miu.swa.creatorservice.controller;
+package miu.swa.inputcreatorservice.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import miu.swa.creatorservice.model.CSData;
-import miu.swa.creatorservice.model.ServiceRunningInfo;
-import miu.swa.creatorservice.service.CreatorService;
-import miu.swa.creatorservice.service.KafkaSender;
-import miu.swa.creatorservice.service.ServiceRunningService;
+import miu.swa.inputcreatorservice.model.InputCreatorData;
+import miu.swa.inputcreatorservice.model.ServiceRunningInfo;
+import miu.swa.inputcreatorservice.service.InputCreatorService;
+import miu.swa.inputcreatorservice.service.KafkaSender;
+import miu.swa.inputcreatorservice.service.ServiceRunningService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -13,12 +13,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class CreatorController {
+public class InputCreatorController {
 
     @Autowired
     KafkaSender sender;
     @Autowired
-    CreatorService service;
+    InputCreatorService service;
     @Autowired
     ServiceRunningService serviceRunningService;
     @Value("${cs.topic.creation}")
@@ -27,7 +27,7 @@ public class CreatorController {
     private String CS_START_SERVICE;
 
     @PostMapping("/create")
-    public ResponseEntity<?> createTopic(@RequestBody CSData csData) throws JsonProcessingException {
+    public ResponseEntity<?> createTopic(@RequestBody InputCreatorData csData) throws JsonProcessingException {
         if (service.find(csData.getTopic()) != null) {
             return new ResponseEntity<>("The topic: " + csData.getTopic() + " is already exist.", HttpStatus.BAD_REQUEST);
         }

@@ -1,6 +1,6 @@
-package miu.swa.creatorservice.repository;
+package miu.swa.inputcreatorservice.repository;
 
-import miu.swa.creatorservice.model.ServiceRunningInfo;
+import miu.swa.inputcreatorservice.model.ServiceRunningInfo;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;

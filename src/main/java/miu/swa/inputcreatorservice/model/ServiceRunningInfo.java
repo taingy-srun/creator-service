@@ -1,4 +1,4 @@
-package miu.swa.creatorservice.model;
+package miu.swa.inputcreatorservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,8 +9,8 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class CSData {
+public class ServiceRunningInfo {
 
-    private String topic;
-    private long fixedRateInMilliseconds;
+    private String serviceName;
+    private String serviceStatus;
 }

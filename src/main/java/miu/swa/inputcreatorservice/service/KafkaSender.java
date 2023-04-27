@@ -1,9 +1,9 @@
-package miu.swa.creatorservice.service;
+package miu.swa.inputcreatorservice.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import miu.swa.creatorservice.model.CSData;
-import miu.swa.creatorservice.model.ServiceRunningInfo;
+import miu.swa.inputcreatorservice.model.InputCreatorData;
+import miu.swa.inputcreatorservice.model.ServiceRunningInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -14,11 +14,11 @@ public class KafkaSender {
     @Autowired
     KafkaTemplate<String, Object> kafkaTemplate;
     @Autowired
-    CreatorService service;
+    InputCreatorService service;
     @Autowired
     ServiceRunningService serviceRunningService;
 
-    public void send(String topic, CSData csData) throws JsonProcessingException {
+    public void send(String topic, InputCreatorData csData) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         String jsonInString = mapper.writeValueAsString(csData);
         kafkaTemplate.send(topic, jsonInString);
